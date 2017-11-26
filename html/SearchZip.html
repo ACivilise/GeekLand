@@ -9,6 +9,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
 	 crossorigin="anonymous">
 	<link type="text/css" rel="stylesheet" href="../css/SearchZip.css" />
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../js/mustache.js"></script>
+	<script type="text/javascript" src="../js/SearchZip.js"></script>
 </head>
 
 <body>
@@ -18,13 +28,13 @@
 			<p>
 				<input type="number" class="codePostal" />
 				<button type="button" class="btn btn-primary" onclick="chercher()">Chercher</button>
-				
+
 			</p>
 			<!-- <p class="amount">		
 			</p> -->
 		</div>
 		<div class="container-fluid">
-			<table id="example" class="table table-hover" cellspacing="0" width="100%">
+			<table id="table" class="table table-hover" cellspacing="0" width="100%">
 				<thead>
 					<tr>
 						<th>Code</th>
@@ -34,14 +44,6 @@
 			</table>
 		</div>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-	 crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-	 crossorigin="anonymous"></script>
-	<script type="text/javascript" src="../js/mustache.js"></script>
-	<script type="text/javascript" src="../js/SearchZip.js"></script>
 </body>
 
 </html>

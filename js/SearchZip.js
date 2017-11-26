@@ -1,5 +1,6 @@
 "use strict";
 
+var tableInitialized = false;
 
 Number.prototype.toMoney = function () {
     var val = this.valueOf();
@@ -9,30 +10,30 @@ Number.prototype.toMoney = function () {
 
 // A $( document ).ready() block.
 $(document).ready(function () {
-    console.log("ready!"); 
+    console.log("ready!");
 });
 
-function chercher()
-{
-// var val = (0.456).toMoney();
-var codePostal = $(".codePostal").val();
+function chercher() {
+    // var val = (0.456).toMoney();
+    var codePostal = $(".codePostal").val();
 
-    $("#example").DataTable({
-        ajax: {
-            type : "GET",
-            url: "https://vicopo.selfbuild.fr/cherche/" + codePostal,
-            dataSrc: function ( json ) {
-                //Make your callback here.
-                console.log("Done!");
-                return json.cities;
-            }  
-        },
+    $("#table").DataTable({
         fixedHeader: true,
         autoWidth: false,
         responsive: true,
         bFilter: false,
         displayLength: 12,
         lengthChange: false,
+        destroy: true,
+        ajax: {
+            type: "GET",
+            url: "https://vicopo.selfbuild.fr/cherche/" + codePostal,
+            dataSrc: function (json) {
+                //Make your callback here.
+                console.log("Done!");
+                return json.cities;
+            }
+        },
         order: [],
         columns: [
             {
@@ -41,9 +42,8 @@ var codePostal = $(".codePostal").val();
             {
                 data: "city",
             }
-        ],
-        // initComplete: function (settings, json) {
-        //     $("#example").css("text-align", "left");
-        // }
+        ]
     });
+
+    
 }

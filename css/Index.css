@@ -1,35 +1,18 @@
-div.container {
-    width: 100%;
-    border: 1px solid gray;
+.contentContainer {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 50px; 
 }
 
-header, footer {
-    padding: 1em;
-    color: white;
-    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-    clear: left;
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
     text-align: center;
-}
-
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-   
-nav ul a {
-    text-decoration: none;
-}
-
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-}
+  }

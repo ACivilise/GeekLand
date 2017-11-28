@@ -1,3 +1,28 @@
 .background{
 	    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
+
+div.dataTables_length {
+    display: none;
+}
+
+.contentContainer {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 50px; 
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+
+  html { height: 100%; }

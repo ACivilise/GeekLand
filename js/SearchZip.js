@@ -1,49 +1,46 @@
 "use strict";
 
-var tableInitialized = false;
-
-Number.prototype.toMoney = function () {
-    var val = this.valueOf();
-    var result = (Math.floor(100 * val) / 100).toFixed(2);
-    return result;
-};
-
-// A $( document ).ready() block.
 $(document).ready(function () {
     console.log("ready!");
+
+    $("#codePostal").keydown(function(event) {
+        if (event.which === 13 || event.keyCode === 13) {
+            $("#searchButton").click();
+        }
+    });
 });
 
 function chercher() {
     // var val = (0.456).toMoney();
     var codePostal = $(".codePostal").val();
 
-    $("#table").DataTable({
-        fixedHeader: true,
-        autoWidth: false,
-        responsive: true,
-        bFilter: false,
-        displayLength: 12,
-        lengthChange: false,
-        destroy: true,
-        ajax: {
-            type: "GET",
-            url: "https://vicopo.selfbuild.fr/cherche/" + codePostal,
-            dataSrc: function (json) {
-                //Make your callback here.
-                console.log("Done!");
-                return json.cities;
-            }
-        },
-        order: [],
-        columns: [
-            {
-                data: "code"
-            },
-            {
-                data: "city",
-            }
-        ]
-    });
+    var cities;
 
-    
+    $.get("https://vicopo.selfbuild.fr/cherche/" + codePostal)
+        .done(function (json) {
+            if (json.cities.length > 0) {
+                cities = json.cities;
+
+                if (cities !== undefined) {
+                    $("#table").DataTable({
+                        pageResize: true,
+                        responsive: true,
+                        bFilter: false,
+                        destroy: true,
+                        data: cities,
+                        columns: [
+                            {
+                                data: "code"
+                            },
+                            {
+                                data: "city",
+                            }
+                        ]
+                    });
+                }
+            }
+        })
+        .fail(function () {
+            alert("No City was found...");
+        });
 }
